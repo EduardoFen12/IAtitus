@@ -45,9 +45,11 @@ def new_document():
     # Recebe o input do JavaScript
     if request.method == 'POST':
         
-        titulo = request.form['title']
-        autor = request.form['author']
-        conteudo = request.form['content']
+        data = request.get_json()
+        
+        titulo = data.get('title')
+        autor = data.get('author')
+        conteudo = data.get('content')
         
         print(f"Título: {titulo}\nAutor: {autor}\nConteúdo: {conteudo}")
     
