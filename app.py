@@ -38,5 +38,19 @@ def process_input():
     return jsonify({'result': response_text})   
 
 
+@app.route('/newDocumentForm', methods=['GET', 'POST'])
+def new_document():
+    # Recebe o input do JavaScript
+    if request.method == 'POST':
+        
+        titulo = request.form['title']
+        autor = request.form['author']
+        conteudo = request.form['content']
+        
+        print(f"Título: {titulo}\nAutor: {autor}\nConteúdo: {conteudo}")
+    
+    return render_template('newDocumentForm.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)
