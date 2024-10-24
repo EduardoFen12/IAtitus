@@ -15,7 +15,7 @@ async function sendInput(title, author, content) {
 document
 	.getElementById("contentForm")
 	.addEventListener("submit", async function (event) {
-		event.preventDefault(); // Prevenir o envio padrão do formulário
+		event.preventDefault();
 
 		const title = document.getElementById("title").value;
 		const author = document.getElementById("author").value;

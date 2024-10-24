@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify, render_template
 import google.generativeai as genai
+import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 
-
-API_KEY = 'coloque_sua_chave_aqui'
+load_dotenv('config.env')
+API_KEY = os.getenv('API_KEY')
 
 genai.configure(api_key=API_KEY)
 
